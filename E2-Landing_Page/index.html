@@ -1,46 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VG Servicios</title>
-  <link rel="stylesheet" href="./css/main.css">
-  <link rel="shortcut icon" href="./img/favicon.ico" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/db9f70d841.js" crossorigin="anonymous"></script>
+  <link rel="preload" href="./css/main.css" as="style" />
+  <link href="./css/main.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <title>VG</title>
 </head>
+
 <body>
   <header>
-      <img src="./img/logo512.png" alt="Logo VG" class="nav__img" />
-      <nav class="nav__header">
-        <ul>
-          <li class="nav__header--list">
-            <a href="#">Inicio</a>
-            <a href="#">Sobre Nosotros</a>
-            <a href="#">Clientes</a>
-            <a href="#">Servicios</a>
-            <a href="#">Contacto</a>
-          </li>
-        </ul>
+    <img src="./img/logo512.png" alt="Logo VG" class="nav__img" />
+    <nav class="nav__header">
+      <ul>
+        <li class="nav__header--list">
+          <a href="#">Inicio</a>
+          <a href="#">Sobre Nosotros</a>
+          <a href="#">Clientes</a>
+          <a href="#">Servicios</a>
+          <a href="#">Contacto</a>
+        </li>
+      </ul>
     </nav>
   </header>
-  <main>
-    <section id="hero">
-      <div class="hero-info">
-        <h1>VG Servicios</h1>
-        <p>
-          Somos una empresas reconocida de Argentina. Con amplia trayectoria dentro del rubro. Dia a dia seguimos sumando experiencia y una cartera importante de clientes que nos recomiendan.
-        </p>
-        <a href="#" class="btn">Contactanos</a>
+  <section class="hero">
+    <div class="contenido--hero">
+      <h2>Electricidad, Mantenimiento e Instalacion de Cámaras</h2>
+      <div class="ubicacion">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="80" height="80"
+          viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffec00" fill="none" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="12" cy="11" r="3" />
+          <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+        </svg>
+        <p>Avellaneda, BS.AS</p>
       </div>
-      <div class="hero-card">
-        <img src="./img/undraw_our_solution_re_8yk6.svg" alt="Team VG">
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <p>Somos una empresa con más de 20 años de experiencia en el rubro. Podemos decir que contamos con el conocimiento en el ámbito industrial. Nuestros clientes nos siguen eligiendo día a día. El mantenimiento eléctrico es imprescindible para detectar posibles fallos o anomalías de funcionamiento del equipamiento eléctrico industrial. Las consecuencias de los fallos eléctricos pueden ser más o menos graves, pero siempre afectan a la productividad de la empresa, por no hablar de posibles daños humanos.</p>
-      </div>
+      <a class="btn" id="contactar">Contactar</a>
+    </div>
+  </section>
+  <main class="contenedor sombra">
+    <h2>Nuestros Servicios</h2>
+    <div class="servicios">
+      <section class="servicio">
+        <h3>Electricidad</h3>
+        <div class="icons">
+
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <p>Instalacion, prevención y mantenimiento de Casas, Edificios. </p>
+      </section>
+      <section class="servicio">
+        <h3>Camaras de Seguridad</h3>
+        <div class="icons">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <p>Instalacion y mantenimiento de camaras de seguridad</p>
+      </section>
+      <section class="servicio">
+        <h3>Mantenimiento</h3>
+        <div class="icons">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+        </div>
+        <p>Ofrecemos mantenimiento de Calderas, Camaras de Seguridad y Tableros.</p>
+      </section>
+    </div>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form class="formulario" id="form">
+        <fieldset>
+          <legend>Contactanos llenando todos los campos</legend>
+          <div class="contenedor-campos">
+            <div class="campo">
+              <label>Nombre</label>
+              <input class="input-text" type="text" placeholder="Tu Nombre" name="name" id="name" required>
+            </div>
+
+            <div class="campo">
+              <label>Telefono</label>
+              <input class="input-text" type="tel" placeholder="Tu Telefono" name="phone" id="phone" required>
+            </div>
+            <div class="campo">
+              <label>Correo</label>
+              <input class="input-text" type="email" placeholder="Tu Correo" name="email" id="email" required>
+            </div>
+            <div class="campo">
+              <label>Mensaje</label>
+              <textarea class="input-text" name="message" id="message" placeholder="Tu Mensaje" required></textarea>
+            </div>
+          </div>
+          <div class="alinear-derecha flex">
+            <input class="btn w-sm-100" type="submit" id="button" value="Enviar">
+          </div>
+        </fieldset>
+      </form>
     </section>
   </main>
+  <footer class="footer">
+    <div class="footer-container">
+      <ul>
+        <h3>Contactanos</h3>
+        <li><i class="fa-solid fa-location-dot"></i> Calle Falsa 123</li>
+        <li><i class="fa-solid fa-phone"></i> 1169696969</li>
+        <li><i class="fa-solid fa-envelope"></i> vgservicios@gmail.com</li>
+        <div class="icons-footer">
+          <i class="fa-brands fa-square-facebook"></i>
+          <i class="fa-brands fa-square-instagram"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+      </ul>
+      <img src="./img/undraw_map_dark_re_36sy.svg" alt="Map VG" class="footer-img">
+    </div>
+  </footer>
 </body>
+
 </html>

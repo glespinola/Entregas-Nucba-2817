@@ -1,26 +1,119 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
-/* Colors */
 :root {
-  /* bg colors */
-  --background: #02050e;
-  --primary: #CF0A0A;
-  --secondary: #DC5F00;
-  --btn-bg: #050d26;
-  --nav-bg: #0f1525;
-
-  --text-gray: #adb9c7;
-  --text-white: #f3f4f6;
+  --blanco: #FFF;
+  --negro: #000;
+  --primario: #FFC107;
+  --secundario: #0097A7;
+  --gris: #757575;
 }
 
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
+
+/* Globales */
+html {
+  font-size: 62.5%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
   text-decoration: none;
   list-style-type: none;
-  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Krub', sans-serif;
+  background-image: linear-gradient(to top, #DFE9F3 0%, var(--blanco) 100%);
+}
+
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.btn {
+  background-color: var(--secundario);
+  color: var(--blanco);
+  padding: 1rem 3rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: .5rem;
+  width: 90%;
+  text-align: center;
+  transition: all .5s cubic-bezier(0.23, 1, 0.320, 1);
+  border: none;
+}
+
+@media (min-width:768px) {
+  .btn {
+    width: auto;
+  }
+}
+
+.btn:hover {
+  background-color: var(--primario);
+  color: var(--negro);
+  cursor: pointer;
+}
+
+.sombra {
+  -webkit-box-shadow: 5px 0px 7px 1px rgba(179, 172, 179, 0.7);
+  -moz-box-shadow: 5px 0px 7px 1px rgba(179, 172, 179, 0.7);
+  box-shadow: 5px 0px 7px 1px rgba(179, 172, 179, 0.7);
+  background-color: var(--blanco);
+  padding: 2rem;
+  border-radius: .4rem;
+}
+
+/* Tipografia*/
+h1 {
+  font-size: 3.8rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+/* Titulos */
+.titulo span {
+  font-size: 2rem;
+}
+
+/** Utilidades **/
+.w-sm-100 {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .w-sm-100 {
+    width: auto;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.alinear-derecha {
+  justify-content: flex-end;
 }
 
 /* NavBar */
@@ -31,8 +124,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
   padding: 0 30px;
 }
 
@@ -40,7 +131,8 @@ header {
   height: 90%;
 }
 
-.nav__header,.nav__header--list {
+.nav__header,
+.nav__header--list {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,76 +143,161 @@ header {
 }
 
 .nav__header--list a {
-  color: var(--text-white);
+  color: var(--negro);
   font-size: 17px;
   font-weight: 600;
   padding: 10px;
 }
 
 .nav__header--list a:hover {
-  background: var(--text-white);
-  color: #02050e;
+  background: var(--negro);
+  color: var(--blanco);
 }
 
-main {
-  background-color: var(--background);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+
+.hero {
+  background-image: url(../img/hero.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* Hero */
+.contenido--hero {
+  position: absolute;
+  background-color: rgba(0, 0, 0, .7);
+  /*Sintaxis anterior*/
+  background-color: rgb(0 0 0 / 70%);
   width: 100%;
-  color: #fff;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-#hero {
-  margin-top: 65px;
-  padding: 70px 0;
-  max-width: 1200px;
+.contenido--hero h2,
+.contenido--hero p {
+  color: var(--blanco);
+}
+
+.ubicacion {
+  display: flex;
+  align-items: flex-end;
+}
+
+/** Servicios **/
+@media (min-width:768px) {
+  .servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+  }
+}
+
+.servicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.servicio h3 {
+  color: var(--secundario);
+  font-weight: normal;
+}
+
+.servicio p {
+  line-height: 2;
+  text-align: center;
+}
+
+.servicio .icons {
+  height: 15rem;
+  width: 15rem;
+  background-color: var(--primario);
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: all .5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.servicio .icons .fa-solid {
+  font-size: 5rem;
+}
+
+.servicio .icons:hover {
+  background-color: var(--secundario);
+}
+
+/*Formulario*/
+.formulario {
+  background-color: var(--gris);
+  width: min(60rem, 100%);
+  /** Utilizar el valor más pequeño **/
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.formulario fieldset {
+  border: none;
+}
+
+.formulario legend {
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--primario);
+}
+
+.campo {
+  margin-bottom: 1rem;
+}
+
+.campo label {
+  color: var(--blanco);
+  font-weight: bold;
+  margin-bottom: .5rem;
+  display: block;
+}
+
+.campo textarea {
+  height: 18rem;
+}
+
+.input-text {
+  width: 100%;
+  border: none;
+  padding: 1.5rem;
+  border-radius: .5rem;
+}
+
+/* Footer */
+.footer {
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 1200px;
 }
 
-.hero-info {
+.footer-container {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 400px;
 }
 
-.hero-info h1 {
-  font-weight: 800;
-  height: 80%;
-  font-size: 50px;
-  min-width: 500px;
+.footer-img {
+  width: 190px;
 }
 
-.hero-info p {
-  color: var(--text-gray);
-  font-size: 16px;
-  width: 70%;
-}
-
-.hero-info a {
-  color: var(--text-white);
-  background-color: var(--primary);
-  width: 120px;
-  padding: 10px 0px;
-  font-size: 14px;
-  text-align: center;
-}
-.hero-info a:hover {
-  color: var(--primary);
-  background-color: var(--text-white);
-}
-.hero-card img {
-  width: 400px;
-}
-
-.container {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 400;
-  max-width: 1200px;
+.icons-footer i {
+  margin-top: 1.8rem;
+  font-size: 3rem;
 }
